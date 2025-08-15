@@ -1,0 +1,53 @@
+body{
+  background-color: aqua;
+}
+
+div{
+  border: 2px solid green;
+  margin: 100px 0 0 50px;/*top,left,bottom,right*/
+  /* margin-left: 200px; */
+  padding-top: 20px;
+}
+
+nav{
+  border: 3px solid black;
+}
+
+img, video{ 
+  width: 200px;
+}
+
+canvas{
+  width:300px ;
+  height:200px ;
+}
+
+/* nav{
+  margin-left: 200px;
+} */
+
+.batas{
+  margin-left: 200px;
+}
+
+.warna{
+  background-color: yellow;
+}
+
+#bg{
+  background-color:red ;
+  /* position: relative; */
+  /* position: absolute; */
+  /* position: fixed;
+  left: 200px; */
+  position: sticky;
+  top: 200px;
+}
+
+#kiri{ 
+  margin-left: 200px;
+}
+
+/* Gunakan id kalau elemennya benar-benar cuma 1 di halaman (misal: <header>, <main>, <footer>)
+
+Gunakan class kalau mau styling beberapa elemen sekaligus */
