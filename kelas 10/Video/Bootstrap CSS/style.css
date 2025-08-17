@@ -35,6 +35,14 @@ a img {
     margin-left: auto;
   }
 }
+@media (min-width: 760px) {
+  .carousel-item img {
+    width: 50%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 
 .jumbotron {
   padding: 0.5rem;
@@ -43,4 +51,12 @@ a img {
 .container h1 {
   font-size: 3em;
   font-weight: bold;
+}
+
+.card img {
+  height: 180px;
+}
+
+.card {
+  width: 18rem;
 }
