@@ -17,3 +17,16 @@
 .hijau {
   background: green;
 }
+
+.carousel-item img {
+  height: 300px;
+  width: 100%;
+}
+
+@media (min-width: 560px) {
+  .carousel-item img {
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
