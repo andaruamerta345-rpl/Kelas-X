@@ -1,4 +1,7 @@
 <div style="margin:auto; width: 900px;">
+
+<h3><a href="http://localhost/Kelas-X/kelas%2010/Video/PHP%20Playlist/restoran/kategori/insert.php">TAMBAH DATA</a></h3><br>
+
 <?php 
 
 
