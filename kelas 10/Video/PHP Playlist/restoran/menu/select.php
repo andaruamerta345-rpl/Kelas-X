@@ -21,7 +21,7 @@
     <form action="" method="post">
         <select name="opsi" onchange="this.form.submit()" >
             <?php foreach($kategori as $r): ?>
-                <option <?php if($r['idkategori']==$opsi) echo "selected" ?> value="<?= $r['idkategori'] ?>"><?= $r['kategori'] ?></option>
+                <option <?php if($r['idkategori']=$opsi) echo "selected" ?> value="<?= $r['idkategori'] ?>"><?= $r['kategori'] ?></option>
             <?php endforeach; ?>
         </select>
     </form>
@@ -29,8 +29,8 @@
 
 
 <?php 
-    $jumlahdata = $db -> rowCOUNT("SELECT idmenu FROM tblmenu");
-    $banyak = 4;
+    $jumlahdata = $db -> rowCOUNT("SELECT idmenu FROM tblmenu $where");
+    $banyak = 3;
     $halaman = ceil($jumlahdata / $banyak);
 
     if (isset($_GET['p'])) {
@@ -49,12 +49,14 @@
 
 <!-- <a href="?f=menu&m=insert">Tambah data</a> -->
 
-<table class="table table-bordered w-50">
+<table class="table table-bordered w-80">
 
     <thead>
         <tr>
             <th>No</th>
             <th>menu</th>
+            <th>Harga</th>
+            <th>Gambar</th>
             <th>Delete</th>
             <th>Update</th>
         </tr>
@@ -70,6 +72,10 @@
             <tr>
                 <td><?= $no++ ?></td>
                 <td><?= $r['menu'] ?></td>
+                <td><?= $r['harga'] ?></td>
+                <td>
+                    <img width="190px" src="../upload/<?= $r['gambar'] ?>" alt="<?= $r['gambar'] ?>">
+                </td>
                 <td><a href="?f=menu&m=delete&id=<?= $r['idmenu'] ?>">Delete</a></td>
                 <td><a href="?f=menu&m=update&id=<?= $r['idmenu'] ?>">Update</a></td>
             </tr>
