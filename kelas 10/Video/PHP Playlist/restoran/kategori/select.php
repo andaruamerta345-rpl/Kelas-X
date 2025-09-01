@@ -13,9 +13,15 @@
     $sql = "SELECT * FROM tblkategori ORDER BY kategori ASC LIMIT $mulai, $banyak";
     $row = $db->getALL($sql);
     $no = 1 + $mulai;
+
 ?>
 
+<div class="float-start me-4">
+    <a class="btn btn-primary" href="?f=kategori&m=insert" role="button">Tambah data</a>
+</div>
+
 <h3>Kategori</h3>
+
 <!-- <a href="?f=kategori&m=insert">Tambah data</a> -->
 
 <table class="table table-bordered w-50">
@@ -36,8 +42,8 @@
             <tr>
                 <td><?= $no++ ?></td>
                 <td><?= $r['kategori'] ?></td>
-                <td><?= $r['idkategori'] ?> </td>
-                <td><?= $r['idkategori'] ?> </td>
+                <td><a href="?f=kategori&m=delete&id=<?= $r['idkategori'] ?>">Delete</a></td>
+                <td><a href="?f=kategori&m=update&id=<?= $r['idkategori'] ?>">Update</a></td>
             </tr>
         <?php endforeach ?>
     </tbody>
