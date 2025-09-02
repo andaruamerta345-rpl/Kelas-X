@@ -1,5 +1,5 @@
 <h3>insert kategori</h3>
-<div>
+<div class="form-group">
     <form action="" method="post">
 
         <div class="form-group w-50">

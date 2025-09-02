@@ -1,7 +1,34 @@
 <?php 
 
+    session_start();
     require_once "../dbcontroller.php";
     $db = new DB;
+
+    if (!isset($_SESSION['user'])) {
+        header("location:login.php");
+    }
+
+    if (isset($_GET['log'])) {
+        session_destroy();
+         echo  "<div style='
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        font-size: 18px;
+        z-index: 9999;
+        text-align: center;
+        '>
+            Ladies & Gentleman user telah berhasil logout, selamat tinggal tuan, hati - hati di jalan
+        </div>";
+        echo "<meta http-equiv='refresh' content='5;url=index.php'>";
+    }
 
 
 ?>
@@ -27,7 +54,8 @@
                 <h2>Restoran</h2>
             </div>
             <div class="col-md-9">
-                <div class="float-end mt-4">logout</div>
+                <div class="float-end mt-4"><a href="?log=logout">Logout</a></div>
+                <div class="float-end mt-4 me-4">user</div>
             </div>
         </div>
 
