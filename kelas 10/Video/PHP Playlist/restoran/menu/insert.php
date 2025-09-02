@@ -61,12 +61,6 @@ if (isset($_POST['simpan'])) {
         echo "<meta http-equiv='refresh' content='2;url=?f=menu&m=select'>";
     }
 
-    
-    // 
-    //  
-
-    // 
-    // header("location:?f=menu&m=select");
 }
 
 
