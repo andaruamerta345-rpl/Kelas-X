@@ -16,7 +16,7 @@
                     Ladies & Gentleman user telah berhasil logout, selamat tinggal tuan, hati - hati di jalan
                 </div>
             </div>';
-        echo "<meta http-equiv='refresh' content='5;url=index.php'>";
+        echo "<meta http-equiv='refresh' content='4;url=index.php'>";
     }
         
 

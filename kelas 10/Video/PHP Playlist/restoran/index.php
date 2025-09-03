@@ -8,6 +8,19 @@
     $row = $db -> getALL($sql);
     // var_dump($row);
 
+    if (isset($_GET['log'])) {
+        $log = $_GET['log'];
+        // echo$log;
+        session_destroy();
+         echo  '
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-success text-center w-50 mt-3">
+                    Ladies & Gentleman Pelanggan telah berhasil logout, selamat tinggal tuan, hati - hati di jalan
+                </div>
+            </div>';
+        echo "<meta http-equiv='refresh' content='4;url=index.php'>";
+    }
+
 
 ?>
 
@@ -36,12 +49,12 @@
                 <?php 
                     if (isset($_SESSION['pelanggan'])) {
                         echo '
-                            <div class="float-end mt-4">Logout</div>
-                            <div class="float-end mt-4 me-4">Pelanggan</div>
+                            <div class="float-end mt-4"><a href="?log=logout">Logout</a></div>
+                            <div class="float-end mt-4 me-4">Pelanggan : '.$_SESSION['pelanggan'].' </div>
                         ';
                     }else {
                         echo '
-                            <div class="float-end mt-4 me-4">Login</div>
+                            <div class="float-end mt-4 me-4"><a href="?f=home&m=login">Login</a></div>
                             <div class="float-end mt-4 me-4"><a href="?f=home&m=daftar">Daftar</a></div>
                         ';
                     }
