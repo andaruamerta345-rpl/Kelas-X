@@ -63,9 +63,7 @@
     </thead>
 
     <tbody>
-        <?php 
-            if (!empty($row)){
-        ?>
+        <?php if (!empty($row)){ ?>
         <?php 
         foreach($row as $r): 
         ?>

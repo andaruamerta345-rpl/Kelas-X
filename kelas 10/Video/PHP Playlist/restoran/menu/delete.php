@@ -9,7 +9,7 @@
             Data berhasil di hapus!
         </div>";
             
-        echo "<meta http-equiv='refresh' content='3;url=?f=menu&m=select'>";
+        echo "<meta http-equiv='refresh' content='1.5;url=?f=menu&m=select'>";
     }
 
 
