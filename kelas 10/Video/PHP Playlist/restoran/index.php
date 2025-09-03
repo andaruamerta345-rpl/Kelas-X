@@ -29,7 +29,7 @@
         <!-- <h1>admin page</h1> -->
         <div class="row">
             <div class="col-md-3">
-                <h2>Restoran SMK </h2>
+                <h2><a href="index.php">Restoran SMK</a> </h2>
             </div>
             <div class="col-md-9">
                 <div class="float-end mt-4">Logout</div>
@@ -47,7 +47,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <?php foreach($row as $r) : ?>
-                        <a class="nav-link" href="#"><?= $r['kategori'] ?></a>
+                        <a class="nav-link" href="?f=home&m=produk&id=<?= $r['idkategori']?>"><?= $r['kategori'] ?></a>
                         <?php endforeach ?>
                     </li>
                     

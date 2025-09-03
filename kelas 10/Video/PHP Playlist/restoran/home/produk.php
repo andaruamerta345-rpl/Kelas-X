@@ -16,7 +16,14 @@
 
 <div class="mt-4 mb-4">
     <?php 
-        $kategori = $db->getALL("SELECT * FROM tblkategori ORDER BY kategori ASC");
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $where = "WHERE idkategori = $id";
+            $id = "&id=" . $id;
+        }else {
+            $where = "";
+            $id = "";
+        }
     ?>
 </div>
 
@@ -51,7 +58,7 @@
 <div style="clear:both;">
     <?php 
     for ($i = 1; $i <= $halaman; $i++) {
-        echo '<a href="?f=home&m=produk&p=' . $i . '">' . $i . '</a>&nbsp;&nbsp;&nbsp;';
+        echo '<a href="?f=home&m=produk&p=' . $i . $id . '">' . $i . '</a>&nbsp;&nbsp;&nbsp;';
     }
     echo '<br><br>';
     ?>
