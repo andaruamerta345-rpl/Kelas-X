@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css"> -->
-    <title>Restoren SMK | Aplikasi Restoran SMK</title>
+    <title>Restoran SMK | Aplikasi Restoran SMK</title>
 </head>
 <body>
     <div class="container">
@@ -57,7 +57,14 @@
 
             <div class="col-md-9">
                  <?php 
-                    echo "<h1>DAFTAR MENU</h1>";
+                    if (isset($_GET['f']) && isset($_GET['m'])) {
+                        $f = $_GET['f'];
+                        $m = $_GET['m'];
+                        $file = $f.'/'.$m.'.php';
+                        require_once "$file";
+                    }else{
+                        require_once "home/produk.php";
+                    }
                  ?>
             </div>
         </div>
