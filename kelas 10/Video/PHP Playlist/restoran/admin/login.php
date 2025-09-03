@@ -58,7 +58,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM tbluser WHERE email = '$email' AND '$password' ";
+        $sql = "SELECT * FROM tbluser WHERE email = '$email' AND password = '$password' ";
 
         $count = $db -> rowCOUNT($sql) ;
         if ($count === 0) {
@@ -70,10 +70,11 @@
             </div>';
             
             }else {
-                $sql = "SELECT * FROM tbluser WHERE email = '$email' AND '$password' ";
+                $sql = "SELECT * FROM tbluser WHERE email = '$email' AND password = '$password' ";
                 $row = $db -> getITEM($sql);
                 $_SESSION['user'] = $row['email'];
                 $_SESSION['level'] = $row['level'];
+                $_SESSION['iduser'] = $row['iduser'];
                 
                 echo  '
                     <div class="d-flex justify-content-center">
