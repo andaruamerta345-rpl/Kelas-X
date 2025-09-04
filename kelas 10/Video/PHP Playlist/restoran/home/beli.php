@@ -48,7 +48,8 @@
 
     function keranjang() {
         global $db;
-        $total =0;
+        $total = 0;
+        global $total;
         echo '
         <table class="table table-bordered w-70">
 
@@ -93,3 +94,7 @@
     }
 
 ?>
+
+
+
+<a class="btn btn-primary" href="?f=home&m=checkout&total=<?=$total?>" role="button">CHECKOUT</a>
