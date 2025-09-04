@@ -93,8 +93,10 @@
         echo '</table>';
     }
 
+
+    
 ?>
 
-
-
-<a class="btn btn-primary" href="?f=home&m=checkout&total=<?=$total?>" role="button">CHECKOUT</a>
+<?php if (!empty($total)) {?>
+    <a class="btn btn-primary" href="?f=home&m=checkout&total=<?=$total?>" role="button">CHECKOUT</a>
+<?php } ?>

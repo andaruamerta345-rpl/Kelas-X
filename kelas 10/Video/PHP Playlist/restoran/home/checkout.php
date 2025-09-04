@@ -14,9 +14,13 @@
         }else {
             insertOrderDetail($idorder);
         }
+        kosongkanSession();
+        header
 
         // echo "Total pembelian anda adalah : ".$total . '<br/>';
         // echo idorder() . '<br/>';
+    }else {
+        info();
     }
 
     function idorder() {
@@ -63,6 +67,31 @@
                 // echo '</pre>';
             }
         }
+    }
+
+    function kosongkanSession() {
+
+        foreach ($_SESSION as $key => $value) {
+            if ($key<>'pelanggan' && $key<>'idpelanggan') {
+                    $id = substr($key,1);
+
+                    unset($_SESSION['_'.$id]);
+                }
+
+            // echo '<pre>';
+            // print_r($row);
+            // echo '</pre>';
+        
+        }
+    }
+
+    function info(){
+        echo  '
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-info text-center w-50 mt-3">
+                   <h3>Terima kasih telah belanja</h3>
+                </div>
+            </div>';
     }
 
 ?>
