@@ -2,12 +2,12 @@
 <div class="form-group">
     <form action="" method="post">
 
-        <div class="form-group w-50 mt-2">
+        <div class="form-group w-50 mt-2 float-left">
             <label for="">Tanggal Awal :</label><br/>
             <input type="date" class="form-control" name="tawal" id="tawal" required>
         </div>
 
-        <div class="form-group w-50 mt-2">
+        <div class="form-group w-50 mt-2 float-left">
             <label for="">Tanggal Akhir :</label><br/>
             <input type="date" class="form-control" name="takhir" id="takhir" required>
         </div>
@@ -23,7 +23,7 @@
     
 
     $jumlahdata = $db -> rowCOUNT("SELECT idorderdetail FROM vorderdetail");
-    $banyak = 4;
+    $banyak = 3;
     $halaman = ceil($jumlahdata / $banyak);
 
     if (isset($_GET['p'])) {
