@@ -49,7 +49,7 @@
             <div class="card-body">
                 <h5 class="card-title"><?= $r['menu'] ?></h5>
                 <p class="card-text">Harga : <?= $r['harga'] ?></p>
-                <a class="btn btn-primary" href="?f=kategori&m=insert" role="button">Beli</a>
+                <a class="btn btn-primary" href="?f=home&m=beli&id=<?=$r['idmenu']?>" role="button">Beli</a>
             </div>
         </div>
     <?php endforeach; ?>
