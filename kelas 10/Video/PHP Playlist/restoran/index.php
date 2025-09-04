@@ -21,6 +21,30 @@
         echo "<meta http-equiv='refresh' content='4;url=index.php'>";
     }
 
+    function cart() {
+        global $db;
+
+        $cart = 0;
+
+        foreach ($_SESSION as $key => $value) {
+            if ($key<>'pelanggan' && $key<>'idpelanggan') {
+                $id = substr($key,1);
+                $sql = "SELECT * FROM tblmenu WHERE idmenu=$id";
+                $row = $db -> getALL($sql);
+
+                foreach ($row as $r) {
+                    $cart++;
+                }
+
+                // echo '<pre>';
+                // print_r($row);
+                // echo '</pre>';
+            }
+        }
+        return $cart;
+    }
+    
+
 
 ?>
 
@@ -49,9 +73,15 @@
                 <?php 
                     if (isset($_SESSION['pelanggan'])) {
                         echo '
-                            <div class="float-end mt-4"><a href="?log=logout">Logout</a></div>
+                            <div class="float-end mt-4">
+                                <a href="?log=logout">Logout</a>
+                            </div>
+
                             <div class="float-end mt-4 me-4">
-                            Pelanggan : <a href="?f=home&m=beli"> '.$_SESSION['pelanggan'].'</a> 
+                                Pelanggan : '.$_SESSION['pelanggan'].'
+                            </div>
+                            <div class="float-end mt-4 me-4">
+                                Cart : ( <a href="?f=home&m=beli"> '. cart() .'</a> ) 
                             </div>
                         ';
                     }else {

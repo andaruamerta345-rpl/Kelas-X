@@ -15,7 +15,7 @@
             insertOrderDetail($idorder);
         }
         kosongkanSession();
-        header
+        header("location:?f=home&m=checkout");
 
         // echo "Total pembelian anda adalah : ".$total . '<br/>';
         // echo idorder() . '<br/>';
@@ -89,7 +89,7 @@
         echo  '
             <div class="d-flex justify-content-center">
                 <div class="alert alert-info text-center w-50 mt-3">
-                   <h3>Terima kasih telah belanja</h3>
+                   <h3>Terima kasih telah berbelanja</h3>
                 </div>
             </div>';
     }
