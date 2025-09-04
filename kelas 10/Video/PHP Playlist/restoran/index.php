@@ -80,8 +80,13 @@
                             <div class="float-end mt-4 me-4">
                                 Pelanggan : '.$_SESSION['pelanggan'].'
                             </div>
+                            
                             <div class="float-end mt-4 me-4">
                                 Cart : ( <a href="?f=home&m=beli"> '. cart() .'</a> ) 
+                            </div>
+
+                            <div class="float-end mt-4 me-4">
+                                <a href="?f=home&m=history">History</a>
                             </div>
                         ';
                     }else {
