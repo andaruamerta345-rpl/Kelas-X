@@ -10,7 +10,7 @@
          $mulai = 0;
     }
 
-    $sql = "SELECT * FROM vorder ORDER BY status ASC LIMIT $mulai, $banyak";
+    $sql = "SELECT * FROM vorder ORDER BY status,idorder ASC LIMIT $mulai, $banyak";
     $row = $db->getALL($sql);
     $no = 1 + $mulai;
 
@@ -29,6 +29,8 @@
             <th>Tanggal</th>
             <th>Total</th>
             <th>Bayar</th>
+            <th>Kembali</th>
+            <th>Status</th>
         </tr>
     </thead>
 
@@ -47,6 +49,8 @@
                 <td><?= $r['pelanggan'] ?></td>
                 <td><?= $r['tglorder'] ?></td>
                 <td><?= "Rp. ".$r['total'] . ",00" ?></td>
+                <td><?= $r['bayar'] ?></td>
+                <td><?= $r['kembali'] ?></td>
                 <?=$status?>
             </tr>
         <?php endforeach ?>
