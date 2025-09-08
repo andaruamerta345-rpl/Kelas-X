@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Pelanggan>
@@ -17,7 +19,11 @@ class PelangganFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'pelanggan' => fake()->name(),
+            'alamat' => fake()->address(),
+            'telp' => fake()->phoneNumber(),
+            'email' => fake()->unique()->safeEmail(),
+            'password' => Hash::make('password'), 
         ];
     }
 }

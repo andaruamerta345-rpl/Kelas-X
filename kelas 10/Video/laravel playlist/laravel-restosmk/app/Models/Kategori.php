@@ -9,4 +9,8 @@ class Kategori extends Model
 {
     /** @use HasFactory<\Database\Factories\KategoriFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'kategori',
+    ];
 }
