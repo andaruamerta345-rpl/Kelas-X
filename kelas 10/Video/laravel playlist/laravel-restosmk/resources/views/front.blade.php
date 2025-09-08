@@ -12,21 +12,32 @@
         <div class="mt-2">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a href="#"></a>
-                    <img 
-                        style="border-radius: 50%; " 
-                        width="100px"
-                        src="{{ asset('gambar/logo.png') }}"
-                        alt="logo"
-                        class="me-auto"
-                        >
+                    <a href="/">
+                        <img 
+                            style="border-radius: 50%; " 
+                            width="100px"
+                            src="{{ asset('gambar/logo.png') }}"
+                            alt="logo"
+                            class="me-auto"
+                            >
+                    </a>
 
                     <ul class="navbar-nav gap-5">
-                        <li class="nav-item">Cart</li>
-                        <li class="nav-item">Register</li>
-                        <li class="nav-item">Email</li>
-                        <li class="nav-item">Login</li>
-                        <li class="nav-item">Logout</li>
+                        <li class="nav-item">
+                            Cart
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('register') }}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            Email
+                        </li>
+                        <li class="nav-item">
+                            Login
+                        </li>
+                        <li class="nav-item">
+                            Logout
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -35,11 +46,15 @@
             <div class="col-2">
                 <ul class="list-group">
                     @foreach ($kategoris as $kategori)
-                        <li class="list-group-item">{{ $kategori -> kategori }}</li>
+                        <li class="list-group-item">
+                            <a href="{{ url('show/'.$kategori->idkategori) }}">
+                                {{ $kategori -> kategori }}
+                            </a>
+                        </li>
                     @endforeach
                 </ul>
             </div>
-            <div>
+            <div class="col-10">
                 @yield('content')
             </div>
         </div>
