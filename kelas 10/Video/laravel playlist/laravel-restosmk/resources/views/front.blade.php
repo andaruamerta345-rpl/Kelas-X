@@ -19,21 +19,31 @@
                             src="{{ asset('gambar/logo.png') }}"
                             alt="logo"
                             class="me-auto"
-                            >
+                        >
                     </a>
 
                     <ul class="navbar-nav gap-5">
-                        <li class="nav-item">
-                            Cart
-                        </li>
+                        @if (session()->has('cart'))
+                            <li class="nav-item">
+                                <a class="btn btn-primary" href="{{ url('cart') }}">
+                                    Cart(
+                                         {{ count(session('cart')) }}
+                                    )
+                                </a>
+                            </li>
+                        @else
+                            <li class="nav-item btn btn-primary">
+                                Cart
+                            </li>
+                        @endif
 
                         @if (session()->missing('idpelanggan'))
                             <li class="nav-item">
-                                <a href="{{ url('register') }}">Register</a>
+                                <a class="btn btn-primary" href="{{ url('register') }}">Register</a>
                             </li>
                             
                             <li class="nav-item">
-                                <a href="{{ url('login') }}">Login</a>
+                                <a class="btn btn-primary" href="{{ url('login') }}">Login</a>
                             </li>
                         @endif
 
@@ -43,7 +53,7 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a href="{{ url('logout') }}">Logout</a>
+                                <a class="btn btn-primary" href="{{ url('logout') }}">Logout</a>
                             </li>
                         @endif
                     </ul>
@@ -55,7 +65,7 @@
                 <ul class="list-group">
                     @foreach ($kategoris as $kategori)
                         <li class="list-group-item">
-                            <a href="{{ url('show/'.$kategori->idkategori) }}">
+                            <a class="btn btn-primary" href="{{ url('show/'.$kategori->idkategori) }}">
                                 {{ $kategori -> kategori }}
                             </a>
                         </li>
@@ -66,8 +76,8 @@
                 @yield('content')
             </div>
         </div>
-        <div>
-            footer
+        <div class="bg-light mt-5">
+            <p class="text-center">@7arzz.com</p>
         </div>
     </div>
 
