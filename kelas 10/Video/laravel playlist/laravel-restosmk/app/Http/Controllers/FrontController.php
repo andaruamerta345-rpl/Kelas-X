@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kategori; 
 use App\Models\Menu; 
+use App\Models\Pelanggan;
+use Illuminate\Support\Facades\Hash;
 
 class FrontController extends Controller
 {
@@ -35,7 +37,23 @@ class FrontController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'pelanggan'=>'required',
+            'alamat'=>'required',
+            'telp'=>'required',
+            'jeniskelamin'=>'required',
+            'email'=>'required | email |unique:pelanggans',
+            'password'=>'required |min:3',
+        ]);
+        Pelanggan::create([
+            'pelanggan'=>$data['pelanggan'],
+            'alamat'=>$data['alamat'],
+            'telp'=>$data['telp'],
+            'jeniskelamin'=>$data['jeniskelamin'],
+            'email'=>$data['email'],
+            'password'=> Hash::make($data['password'])
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -76,9 +94,46 @@ class FrontController extends Controller
         //
     }
 
-    public function register()  {
+    public function register()  
+    {
         $kategoris=Kategori::all();
         
         return view('register',['kategoris'=>$kategoris]);
+    }
+
+    public function login() 
+    {
+        $kategoris=Kategori::all();
+        
+        return view('login',['kategoris'=>$kategoris]);
+    }
+
+    public function postlogin(Request $request) 
+    {
+       $data = $request->validate([
+        'email'    => 'required',
+        'password' => 'required|min:3'
+       ]);
+       $pelanggan = Pelanggan::where('email',$data['email'])->first();
+       if ($pelanggan) {
+        if (Hash::check($data['password'],$pelanggan['password'])) {
+           $data = [
+                'idpelanggan' => $pelanggan['idpelanggan'],
+                'email' => $pelanggan['email'],
+           ];
+           $request->session()->put('idpelanggan',$data);
+           return redirect('/');
+        }else {
+            return back()->with('pesan','Mohon maaf, Password anda salah tuan');
+        }
+       }else {
+            return back()->with('pesan','Mohon maaf tuan, Email anda belum terdaftar');
+       }
+    }
+
+    public function logout()
+    {
+        session()->flush();
+        return redirect('/');
     }
 }
