@@ -51,10 +51,10 @@
                     @endif
                     @if (Auth::user()->level == 'manager')
                     <li class="list-group-item">
-                        <a class="btn btn-primary" href="">Kategori</a>
+                        <a class="btn btn-primary" href="{{ url('admin/kategori') }}">Kategori</a>
                     </li>
                     <li class="list-group-item">
-                        <a class="btn btn-primary" href="">Menu</a>
+                        <a class="btn btn-primary" href="{{ url('admin/menu') }}">Menu</a>
                     </li>
                     <li class="list-group-item">
                         <a class="btn btn-primary" href="">Pelanggan</a>
