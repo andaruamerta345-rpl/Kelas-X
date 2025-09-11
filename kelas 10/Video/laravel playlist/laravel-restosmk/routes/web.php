@@ -6,7 +6,9 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\CekLogin;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -34,15 +36,15 @@ Route::get('admin/logout', [AuthController::class, 'logout']);
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
 
-    Route::group(['middleware' => ['CekLogin:admin']],function(){
-        Route::resource('user', UserController::class);
+    Route::group(['middleware' => ['ceklogin:admin']], function () {
+    Route::resource('user', UserController::class);
     });
 
-    Route::group(['middleware' => ['CekLogin:kasir']],function(){
+    Route::group(['middleware' => ['ceklogin:kasir']], function () {
         Route::resource('order', OrderController::class);
     });
 
-    Route::group(['middleware' => ['CekLogin:manager']],function(){
+    Route::group(['middleware' => ['ceklogin:manager']], function () {
         Route::resource('kategori', KategoriController::class);
     });
 
