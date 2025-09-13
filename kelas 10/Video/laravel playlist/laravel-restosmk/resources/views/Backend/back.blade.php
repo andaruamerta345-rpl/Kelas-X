@@ -38,15 +38,15 @@
                 <ul class="list-group">
                     @if (Auth::user()->level == 'admin')
                     <li class="list-group-item">
-                        <a class="btn btn-primary" href="">User</a>
+                        <a class="btn btn-primary" href="{{ url('admin/user') }}">User</a>
                     </li>
                     @endif
                     @if (Auth::user()->level == 'kasir')
                     <li class="list-group-item">
-                        <a class="btn btn-primary" href="">Order</a>
+                        <a class="btn btn-primary" href="{{ url('admin/order') }}">Order</a>
                     </li>
                     <li class="list-group-item">
-                        <a class="btn btn-primary" href="">Order Detail</a>
+                        <a class="btn btn-primary" href="{{ url('admin/orderdetail') }}">Order Detail</a>
                     </li>
                     @endif
                     @if (Auth::user()->level == 'manager')

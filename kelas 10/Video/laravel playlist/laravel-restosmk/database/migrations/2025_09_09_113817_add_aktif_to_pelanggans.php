@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('pelanggans', function (Blueprint $table) {
-            //
+            $table->boolean('aktif')->default(1)->after('updated_at');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('pelanggans', function (Blueprint $table) {
-            Schema::dropIfExists('pelanggans');
+            $table->dropColumn('aktif');
         });
     }
 };
