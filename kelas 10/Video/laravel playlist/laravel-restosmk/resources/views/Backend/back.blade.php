@@ -57,13 +57,13 @@
                         <a class="btn btn-primary" href="{{ url('admin/menu') }}">Menu</a>
                     </li>
                     <li class="list-group-item">
-                        <a class="btn btn-primary" href="">Pelanggan</a>
+                        <a class="btn btn-primary" href="{{ url('admin/pelanggan') }}">Pelanggan</a>
                     </li>
                     <li class="list-group-item">
-                        <a class="btn btn-primary" href="">Order</a>
+                        <a class="btn btn-primary" href="{{ url('admin/order') }}">Order</a>
                     </li>
                     <li class="list-group-item">
-                        <a class="btn btn-primary" href="">Order Detail</a>
+                        <a class="btn btn-primary" href="{{ url('admin/orderdetail') }}">Order Detail</a>
                     </li>
                     @endif
                 </ul>

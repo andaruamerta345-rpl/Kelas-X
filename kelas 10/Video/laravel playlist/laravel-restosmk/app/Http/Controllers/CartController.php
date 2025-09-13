@@ -81,7 +81,7 @@ class CartController extends Controller
 
     public function checkout()
     {
-       $idorder = date('YmdHms');
+       $idorder = date('YmdHis');
        $total = 0;
        foreach (session('cart') as $key => $value) {
         $data = [
@@ -102,6 +102,7 @@ class CartController extends Controller
         'total' => $total,
         'bayar' => 0,
         'kembali' => 0,
+        'status' => 0,
        ];
        Order::create($data);
        return redirect('logout');
