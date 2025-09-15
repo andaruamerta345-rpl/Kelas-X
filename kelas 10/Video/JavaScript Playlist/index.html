@@ -4,25 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belajar JavaScript</title>
+    <!-- external javascript -->
+    <script src="js/counter.js" async></script>
   </head>
   <body>
-    <div class="container">
-      <div class="head">
-        <h1 onclick="tampil(this.innerHTML)">KLIK DISINI UNTUK TAMPIL</h1>
-        <p></p>
-      </div>
-      <div class="content">
-        <h2 id="judul">Klik id ini untuk eventlistener</h2>
-        <p class="isi"></p>
-      </div>
-    </div>
-
-    <!-- external javascript -->
-    <script src="js/eventlistener.js"></script>
-
-    <!-- internal javascript -->
-    <!-- <script>
-        alert("Belajar JavaScript");
-    </script> -->
+    <input type="submit" value="Count UP" id="naik" />
+    <h1>0</h1>
+    <input type="submit" value="Count Down" id="turun" />
   </body>
 </html>
