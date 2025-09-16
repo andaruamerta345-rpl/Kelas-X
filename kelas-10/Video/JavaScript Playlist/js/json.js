@@ -20,7 +20,7 @@ function tampil() {
         `;
       });
       output += "</table>";
-      document.querySelector("#isi").innerHTML = output;
+      document.querySelector("#isi").innerHTML = out;
     });
 }
 
