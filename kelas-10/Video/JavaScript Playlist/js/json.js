@@ -1,0 +1,31 @@
+{
+  "quoteProps": "always"
+}
+let tblmenu =[
+    {
+    "idmenu": 1,
+    "idkategori": 1,
+    "menu": "Ayam Bakar",
+    "gambar": "ayam.jpg",
+    "harga": 25000,
+    "warna": [
+        "merah",
+        "kuning",
+        "hijau"
+    ],
+    "stok": true,
+    "keterangan": null
+},{
+    "idmenu": 2,
+    "idkategori": 1,
+    "menu": "ikan",
+    "gambar": "ikan.jpeg",
+    "harga": 20000,
+    "warna": [
+        "merah",
+        "kuning"
+    ],
+    "stok": false,
+    "keterangan": null
+}
+]
