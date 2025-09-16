@@ -69,7 +69,13 @@ let cart = [];
 for (let i = 0; i < btnbeli.length; i++) {
   btnbeli[i].onclick = function () {
     // console.log(btnbeli[i].dataset["idmenu"]);
-    cart.push(btnbeli[i].dataset["idmenu"]);
+    // cart.push(btnbeli[i].dataset["idmenu"]);
+    tblmenu.filter(function (a) {
+      if (a.idmenu == btnbeli[i].dataset["idmenu"]) {
+        cart.push(a);
+        console.log(cart);
+      }
+    });
   };
 }
-console.log(cart);
+// console.log(cart);
