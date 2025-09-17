@@ -26,6 +26,12 @@ jQuery(document).ready(function ($) {
     $("#telp").val("");
   });
 
+  $("tbody").on("click", ".btn-del", function () {
+    let id = $(this).attr("data-id");
+    // alert("Delete id " + id);
+    deleteData(id);
+  });
+
   function selectData() {
     // alert("select data");
     $.ajax({
@@ -43,6 +49,16 @@ jQuery(document).ready(function ($) {
             <td>${val.pelanggan}</td>
             <td>${val.alamat}</td>
             <td>${val.telp}</td>
+            <td>
+                <button class="btn btn-danger btn-sm btn-del" data-id="${
+                  val.idpelanggan
+                }">DEL</button>
+            </td>
+            <td>
+                <button class="btn btn-warning btn-sm" onclick="updateData(${
+                  val.id
+                })">Update</button>
+            </td>
           </tr>`;
         });
         $("#isidata").html(out);
@@ -62,6 +78,7 @@ jQuery(document).ready(function ($) {
     $.ajax({
       type: "POST",
       url: "php/insert.php",
+      cache: false,
       data: JSON.stringify(dataPelanggan),
       contentType: "application/json",
       success: function (response) {
@@ -73,8 +90,25 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function deleteData() {
-    alert("delete data");
+  function deleteData(id) {
+    // alert("delete data " + id);
+    let idPelanggan = {
+      idPelanggan: id,
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "php/delete.php",
+      cache: false,
+      data: JSON.stringify(idPelanggan),
+      contentType: "application/json",
+      success: function (response) {
+        // console.log(response);
+        let out = `${response}`;
+        $("#msg").html(out);
+        selectData();
+      },
+    });
   }
 
   function updateData() {

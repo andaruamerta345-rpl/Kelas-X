@@ -14,7 +14,7 @@
 
         if ($result = mysqli_query($con, $sql)) {
             echo '
-            div class="alert alert-primary" role="alert">
+            div class="alert alert-success" role="alert"
                 Data Anda Berhasil Disimpan Tuan :)
             </div>';
         } else {
