@@ -22,23 +22,27 @@
                         <h2>Input Data Pelanggan</h2>
                     </div>
                     <div class="row">
+                        <div id="msg">
+                        <!-- Pesan akan muncul disini -->
+                        </div>
                         <form>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Pelanggan :</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="number" class="form-control" id="id" aria-describedby="emailHelp" required>
+                                <label for="pelanggan" class="form-label">Pelanggan :</label>
+                                <input type="text" class="form-control" id="pelanggan" aria-describedby="emailHelp" required>
                                 <div id="emailHelp" class="form-text">Harus diisi!</div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Alamat :</label>
-                                <input type="text" class="form-control" id="alamat">
+                                <label for="alamat" class="form-label">Alamat :</label>
+                                <input type="text" class="form-control" id="alamat" required>
                                 <div id="emailHelp" class="form-text">Harus diisi!</div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Telp :</label>
-                                <input type="tel" class="form-control" id="telp">
+                                <label for="telp" class="form-label">Telp :</label>
+                                <input type="tel" class="form-control" id="telp" required>
                                 <div id="emailHelp" class="form-text">Harus diisi!</div>
                             </div>
-                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" id="submit" class="btn btn-primary">Simpan</button>
                         </form>
                     </div>
                 </div>
