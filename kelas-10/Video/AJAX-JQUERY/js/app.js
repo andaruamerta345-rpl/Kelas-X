@@ -32,6 +32,41 @@ jQuery(document).ready(function ($) {
     deleteData(id);
   });
 
+  $("tbody").on("click", ".btn-ubah", function () {
+    let id = $(this).attr("data-id");
+    // alert("Delete id " + id);
+    selectUpdate(id);
+  });
+
+  function selectUpdate(id) {
+    // alert("select update " + id);
+    let idPelanggan = {
+      idPelanggan: id,
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "php/selectupdate.php",
+      cache: false,
+      data: JSON.stringify(idPelanggan),
+      contentType: "application/json",
+      success: function (response) {
+        // console.log(response);
+        let data = JSON.parse(response);
+        // console.log(data.idpelanggan);
+        // console.log(data.pelanggan);
+        // console.log(data.alamat);
+        // console.log(data.telp);
+        // console.log(data);
+
+        $("#id").val(data.idpelanggan);
+        $("#pelanggan").val(data.pelanggan);
+        $("#alamat").val(data.alamat);
+        $("#telp").val(data.telp);
+      },
+    });
+  }
+
   function selectData() {
     // alert("select data");
     $.ajax({
@@ -55,9 +90,9 @@ jQuery(document).ready(function ($) {
                 }">DEL</button>
             </td>
             <td>
-                <button class="btn btn-warning btn-sm" onclick="updateData(${
-                  val.id
-                })">Update</button>
+                <button class="btn btn-warning btn-sm btn-ubah" data-id="${
+                  val.idpelanggan
+                }">UBAH</button>
             </td>
           </tr>`;
         });
@@ -111,7 +146,5 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function updateData() {
-    alert("update data");
-  }
+  function updateData() {}
 });

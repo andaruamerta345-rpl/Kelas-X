@@ -59,7 +59,7 @@
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Telp</th>
                                 <th scope="col">Delete</th>
-                                <th scope="col">Update</th>
+                                <th scope="col">Ubah</th>
                             </tr>
                         </thead>
                         <tbody id="isidata">
