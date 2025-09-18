@@ -146,5 +146,27 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function updateData() {}
+  function updateData() {
+    // alert("update data");
+    let dataPelanggan = {
+      idpelanggan: id,
+      pelanggan: pelanggan,
+      alamat: alamat,
+      telp: telp,
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "php/update.php",
+      cache: false,
+      data: JSON.stringify(dataPelanggan),
+      contentType: "application/json",
+      success: function (response) {
+        // console.log(response);
+        let out = `${response}`;
+        $("#msg").html(out);
+        selectData();
+      },
+    });
+  }
 });

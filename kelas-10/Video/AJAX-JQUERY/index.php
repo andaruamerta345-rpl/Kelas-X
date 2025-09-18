@@ -27,7 +27,7 @@
                         </div>
                         <form>
                             <div class="mb-3">
-                                <input type="number" class="form-control" id="id" aria-describedby="emailHelp" required>
+                                <input type="number" hidden class="form-control" id="id" aria-describedby="emailHelp" required>
                                 <label for="pelanggan" class="form-label">Pelanggan :</label>
                                 <input type="text" class="form-control" id="pelanggan" aria-describedby="emailHelp" required>
                                 <div id="emailHelp" class="form-text">Harus diisi!</div>
