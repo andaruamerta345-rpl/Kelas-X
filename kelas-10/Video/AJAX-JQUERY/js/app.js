@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
 
   $("#btn-tambah").click(function (e) {
     e.preventDefault();
-    // alert("Tombol tambah diklik");
+    // alert(" tambah diklik");
 
     $("#tittle").html("<p>Tambah Data</p>");
 
