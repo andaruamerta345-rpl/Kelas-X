@@ -26,15 +26,31 @@ jQuery(document).ready(function ($) {
     $("#telp").val("");
   });
 
+  $("#btn-tambah").click(function (e) {
+    e.preventDefault();
+    // alert("Tombol tambah diklik");
+
+    $("#tittle").html("<p>Tambah Data</p>");
+
+    $("#id").val("");
+    $("#pelanggan").val("");
+    $("#alamat").val("");
+    $("#telp").val("");
+  });
+
   $("tbody").on("click", ".btn-del", function () {
     let id = $(this).attr("data-id");
     // alert("Delete id " + id);
-    deleteData(id);
+    if (confirm("Yakin data akan dihapus tuan?")) {
+      // alert("Data akan dihapus");
+      deleteData(id);
+    }
   });
 
   $("tbody").on("click", ".btn-ubah", function () {
     let id = $(this).attr("data-id");
     // alert("Delete id " + id);
+    $("#tittle").html("<p>Ubah Data</p>");
     selectUpdate(id);
   });
 

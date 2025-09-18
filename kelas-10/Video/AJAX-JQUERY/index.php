@@ -16,36 +16,25 @@
             <div class="row mt-4">
                 <h1>Belajar Ajax-Jquery Bootstrap PHP</h1>
             </div>
+            <div class="row">
+                <div class="col-4">
+                    <!-- Button trigger modal -->
+                    <button type="button" id="btn-tambah" class=" btn btn-primary btn-lg mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Tambah Pelanggan
+                    </button>
+                </div>
+            </div>
             <div class="row mt-4">
-                <div class="col-sm">
+                <!-- <div class="col-sm">
                     <div class="row">
                         <h2>Input Data Pelanggan</h2>
                     </div>
                     <div class="row">
                         <div id="msg">
-                        <!-- Pesan akan muncul disini -->
                         </div>
-                        <form>
-                            <div class="mb-3">
-                                <input type="number" hidden class="form-control" id="id" aria-describedby="emailHelp" required>
-                                <label for="pelanggan" class="form-label">Pelanggan :</label>
-                                <input type="text" class="form-control" id="pelanggan" aria-describedby="emailHelp" required>
-                                <div id="emailHelp" class="form-text">Harus diisi!</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="alamat" class="form-label">Alamat :</label>
-                                <input type="text" class="form-control" id="alamat" required>
-                                <div id="emailHelp" class="form-text">Harus diisi!</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="telp" class="form-label">Telp :</label>
-                                <input type="tel" class="form-control" id="telp" required>
-                                <div id="emailHelp" class="form-text">Harus diisi!</div>
-                            </div>
-                            <button type="submit" id="submit" class="btn btn-primary">Simpan</button>
-                        </form>
+                        
                     </div>
-                </div>
+                </div> -->
                 <div class="col-sm">
                   <div class="row">
                     <h2>Data Pelanggan</h2>
@@ -68,6 +57,39 @@
                     </table>
                   </div>
                 </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tittle">Tambah Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="number" hidden class="form-control" id="id" aria-describedby="emailHelp" required>
+                            <label for="pelanggan" class="form-label">Pelanggan :</label>
+                            <input type="text" class="form-control" id="pelanggan" aria-describedby="emailHelp" required>
+                            <div id="emailHelp" class="form-text">Harus diisi!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamat" class="form-label">Alamat :</label>
+                            <input type="text" class="form-control" id="alamat" required>
+                            <div id="emailHelp" class="form-text">Harus diisi!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telp" class="form-label">Telp :</label>
+                            <input type="tel" class="form-control" id="telp" required>
+                            <div id="emailHelp" class="form-text">Harus diisi!</div>
+                        </div>
+                        <button type="submit" id="submit" data-bs-dismiss="modal" class="btn btn-primary">Simpan</button>
+                    </form>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
         
