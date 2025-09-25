@@ -1,0 +1,146 @@
+/* #rumah {
+  width: 80%;
+  margin: auto;
+}
+
+.kompetensi {
+  color: red;
+  font-style: italic;
+  font-size: large;
+}
+.pendidikan {
+  height: 500px;
+}
+.huruf {
+  font-family: "franklin gothic medium", "Arial narrow", arial, sans-serif;
+  font-size: xx-large;
+  font-weight: 500;
+}
+.jarak {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.warna {
+  background-color: yellow;
+} */
+
+/* ====== Reset & Global ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ====== Container ====== */
+.container {
+  width: 80%;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+}
+
+/* ====== Heading ====== */
+.container h1,
+.skill {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #3498db;
+}
+
+.container h1 {
+  font-size: 24px;
+  border-left: 5px solid #3498db;
+  padding-left: 10px;
+  border-bottom: none;
+}
+
+/* ====== Section (Identitas, Pendidikan, Kompetensi) ====== */
+.identitas,
+.pendidikan,
+.kompetensi {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  transition: transform 0.2s ease-in-out;
+}
+
+.identitas:hover,
+.pendidikan:hover,
+.kompetensi:hover {
+  transform: scale(1.02);
+}
+
+.container p {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* ====== Skill ====== */
+div > div {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ====== List ====== */
+ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+ul h5 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+ul li {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* ====== Tombol ====== */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #217dbb;
+}
+
+.btn-back {
+  display: inline-block;
+  margin: 20px 0 0 20px;
+  padding: 10px 18px;
+  background: #e74c3c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn-back:hover {
+  background: #c0392b;
+}

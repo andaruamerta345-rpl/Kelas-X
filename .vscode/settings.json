@@ -1,6 +1,7 @@
 {
   "C_Cpp.default.includePath": [""],
   "files.associations": {
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "ostream": "cpp"
   }
 }
