@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <!-- <style>
+      .container {
+        background-color: aqua;
+        position: absolute;
+        top: 100px;
+      }
+      .box1 {
+        background-color: red;
+      }
+      .box2 {
+        background-color: yellow;
+      }
+      .box3 {
+        background-color: green;
+        position: relative;
+        top: -100px;
+      }
+    </style> -->
+    <style>
+      .container {
+        width: 150px; /* 3 kotak × 50px */
+        height: 150px;
+        border: 2px solid black;
+        margin: auto;
+        position: relative;
+      }
+      .kotak {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+      }
+      .hitam {
+        background: #1e154e;
+      }
+      .putih {
+        background: #7e82bb;
+      }
+
+      /* Baris 1 */
+      .r1c1{
+        top: 0;
+        left: 0;
+      }
+      .r1c2{
+        top: 0;
+        left: 50px;
+      }
+      .r1c3{
+        top: 0;
+        right: 0;
+      }
+
+      /* Baris 2 */
+      .r2c1{
+        top: 50px;
+        left: 0;
+      }
+      .r2c2{
+        top: 50px;
+        left: 50px;
+      }
+      .r2c3{
+        top: 50px;
+        right: 0;
+      }
+
+      /* Baris 3 */
+      .r3c1{
+        top: 100px;
+        left: 0;
+      }
+      .r3c2{
+        top: 100px;
+        left: 50px;
+      }
+      .r3c3{
+        top: 100px;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="container">
+      <div class="box1">
+        <h1>box-1</h1>
+      </div>
+
+      <div class="box2">
+        <h1>box-2</h1>
+      </div>
+
+      <div class="box3">
+        <h1>box-3 box-3 box-3 box-3 box-3 box-3 box-3 box-3 box-3</h1>
+      </div>
+    </div> -->
+
+
+    <div class="container">
+      <!-- Baris 1 -->
+      <div class="kotak hitam r1c1"></div>
+      <div class="kotak putih r1c2" ></div>
+      <div class="kotak hitam r1c3" ></div>
+
+      <!-- Baris 2 -->
+      <div class="kotak putih r2c1" ></div>
+      <div class="kotak hitam r2c2"></div>
+      <div class="kotak putih r2c3" ></div>
+
+      <!-- Baris 3 -->
+      <div class="kotak hitam r3c1"></div>
+      <div class="kotak putih r3c2"></div>
+      <div class="kotak hitam r3c3" ></div>
+  </body>
+</html>
