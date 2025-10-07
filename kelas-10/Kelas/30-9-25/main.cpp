@@ -1,15 +1,27 @@
 #include <iostream>
 using namespace std;
 
-string getZodiak(int tanggal, int bulan) {
-    // validasi dulu
+string getZodiak(int tanggal, int bulan, int tahun, int maxHari) {
     if (bulan < 1 || bulan > 12) {
         return "Nulis bulan yang bener napa!";
-    } else if (tanggal < 1 || tanggal > 31) {
+    }
+
+    if (bulan == 2) {
+        if ((tahun % 4 == 0 && tahun % 100 != 0) || (tahun % 400 == 0)) {
+            maxHari = 29;
+        } else {
+            maxHari = 28;
+        }
+    } else if (bulan == 4 || bulan == 6 || bulan == 9 || bulan == 11) {
+        maxHari = 30;
+    } else {
+        maxHari = 31;
+    }
+
+    if (tanggal < 1 || tanggal > maxHari) {
         return "Nulis tanggal yang bener napa!";
     }
 
-    // kalau valid, baru cek zodiak
     if ((bulan == 3 && tanggal >= 21) || (bulan == 4 && tanggal <= 19)) {
         return "Aries";
     } else if ((bulan == 4 && tanggal >= 20) || (bulan == 5 && tanggal <= 20)) {
@@ -65,12 +77,31 @@ string getQuotes(string zodiak) {
     } else if (zodiak == "Pisces") {
         return "Imajinasi dan hatimu membuatmu istimewa.";
     } else {
-        return "Ga ketemu zodiaknya, mungkin kamu alien?";
+        return "Ga ketemu zodiaknya, mungkin Tanggal atau Bulan salah";
     }
 }
 
+string getKhodam(string zodiak) {
+    if (zodiak == "Aries") return "Hilda (Tante tante gagah)";
+    else if (zodiak == "Taurus") return "Minotaur (Banteng PDI) ";
+    else if (zodiak == "Gemini") return "Selena & Karina (Si paling kembar)";
+    else if (zodiak == "Cancer") return "Zhask (Si paling banyak joni)";
+    else if (zodiak == "Leo") return "Badang (Salam dari binjai) ";
+    else if (zodiak == "Virgo") return "Odette (Klo nanyi enak sihh)";
+    else if (zodiak == "Libra") return " Lunox (Tante Cantik) ";
+    else if (zodiak == "Scorpio") return "Kalajengking Bayangan ";
+    else if (zodiak == "Sagitarius") return "Helcurt (Tukang Matiin Lampu) ";
+    else if (zodiak == "Capricorn") return "Martis (Tukang bantai early)";
+    else if (zodiak == "Aquarius") return "Aurora (Tukang Es)";
+    else if (zodiak == "Pisces") return "Lancelot  (si paling Sing Sing Sing) ";
+    else return "Belum ada khodam, upgrade ke versi spiritual premium ";
+}
+
 int main() {
-    int tanggal, bulan, tahun;
+    int tanggal, bulan, tahun, maxHari;
+    cout << "==============================="<<endl;
+    cout << "       Cek Khodam Tuan         "<<endl;
+    cout << "==============================="<<endl;
 
     cout << "Masukkan tanggal lahir: ";
     cin >> tanggal;
@@ -79,10 +110,11 @@ int main() {
     cout << "Masukkan tahun lahir: ";
     cin >> tahun;
 
-    string zodiak = getZodiak(tanggal, bulan);
+    string zodiak = getZodiak(tanggal, bulan, tahun, maxHari);
     cout << "\nTanggal lahir kamu: " << tanggal << "-" << bulan << "-" << tahun << endl;
     cout << "Zodiak kamu adalah: " << zodiak << endl;
     cout << "Quotes buat kamu: " << getQuotes(zodiak) << endl;
+    cout << "Khodam hewan pendampingmu adalah: " << getKhodam(zodiak) << endl;
 
     return 0;
 }
