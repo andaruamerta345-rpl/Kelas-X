@@ -14,7 +14,7 @@
 
     if (isset($_POST['kirim'])) {
         $email = $_POST['email'];
-    $password = $_POST['password'];
+        $password = $_POST['password'];
 
 
     echo $email . "<br />";
