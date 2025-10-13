@@ -1,6 +1,6 @@
 <?php 
     // Navbar
-    $nav = ['Home','Profil','Kegiatan','Prestasi'];
+    $nav = ['Home','Profil','Kegiatan','Prestasi','Jadwal'];
     $judulNavbar = "SMPN 2 Sukodono";
 
     // Carousel
@@ -131,6 +131,29 @@
     Hasil akhir diumumkan secara terbuka hari itu juga, dan pasangan $paslonTerpilih resmi terpilih sebagai Ketua dan Wakil Ketua OSIS periode 2025/2026 dengan perolehan $jumlahSuara.
     ";
 
+
+    // Jadwal 
+  $judulJadwal = "Jadwal PBM SMPN 2 Sukodono";
+
+  $jam1 = "1<br>07.00 - 07.50";
+  $jam2 = "2<br>07.50 - 08.30";
+  $jam3 = "3<br>08.30 - 09.10";
+  $jam4 = "4<br>09.10 - 09.30";
+  $jam5 = "Istirahat<br>09.30 - 09.50";
+  $jam6 = "5<br>09.50 - 10.20";
+  $jam7 = "6<br>10.20 - 11.00";
+  $jam8 = "7<br>11.00 - 11.40";
+  $jam9 = "Istirahat Sholat<br>11.40 - 12.40";
+  $jam10 = "8<br>12.40 - 13.20";
+  $jam11 = "9<br>13.20 - 14.00";
+
+
+  $PBM = "PBM";
+  $istirahat = "Istirahat";
+  $istirahatSholat = "Istirahat Sholat";
+
+  $jadwal  = [$PBM,$istirahat,$istirahatSholat];
+
 ?>
 
 <!DOCTYPE html>
@@ -156,6 +179,7 @@
                     <a class="nav-link" href="#<?= $nav[1] ?>"><?= $nav[1] ?></a>
                     <a class="nav-link" href="#<?= $nav[2] ?>"><?= $nav[2] ?></a>
                     <a class="nav-link" href="#<?= $nav[3] ?>"><?= $nav[3] ?></a>
+                    <a class="nav-link" href="#<?= $nav[4] ?>"><?= $nav[4] ?></a>
                 </div>
             </div>
         </div>
@@ -354,6 +378,114 @@
                 </div>
             </div>
         </div>
+    </section>
+
+        <section id="jadwal" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4 fw-bold text-primary">
+          <?= $judulJadwal ?>
+        </h2>
+        <table class="table table-bordered text-center align-middle">
+          <thead class="table-primary">
+            <tr>
+              <th>Hari</th>
+              <th><?= $jam1 ?></th>
+              <th><?= $jam2 ?></th>
+              <th><?= $jam3 ?></th>
+              <th><?= $jam4 ?></th>
+              <th><?= $jam5 ?></th>
+              <th><?= $jam6 ?></th>
+              <th><?= $jam7 ?></th>
+              <th><?= $jam8 ?></th>
+              <th><?= $jam9 ?></th>
+              <th><?= $jam10 ?></th>
+              <th><?= $jam11 ?></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Senin</td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[1] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[2] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+            </tr>
+            <tr>
+              <td>Selasa</td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[1] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[2] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+            </tr>
+            <tr>
+              <td>Rabu</td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[1] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[2] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+            </tr>
+            <tr>
+              <td>Kamis</td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[1] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[2] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+            </tr>
+            <tr>
+              <td>Jumat</td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[1] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td colspan="3" ><?= $jadwal[2] . " Jumat" ?></td>
+            </tr>
+            <tr>
+              <td>Sabtu</td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[1] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td><?= $jadwal[0] ?></td>
+              <td colspan="3" ><?= $jadwal[2] . " & pulang / Pramuka wajib bagi kelas 7" ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
