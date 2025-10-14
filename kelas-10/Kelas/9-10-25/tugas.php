@@ -380,7 +380,7 @@
         </div>
     </section>
 
-        <section id="jadwal" class="py-5 bg-light">
+    <section id="jadwal" class="py-5 bg-light">
       <div class="container">
         <h2 class="text-center mb-4 fw-bold text-primary">
           <?= $judulJadwal ?>

@@ -2,10 +2,7 @@
 using namespace std;
 
 string getZodiak(int tanggal, int bulan, int tahun, int maxHari) {
-    if (bulan < 1 || bulan > 12) {
-        return "Nulis bulan yang bener napa!";
-    }
-
+    
     if (bulan == 2) {
         if ((tahun % 4 == 0 && tahun % 100 != 0) || (tahun % 400 == 0)) {
             maxHari = 29;
@@ -16,6 +13,10 @@ string getZodiak(int tanggal, int bulan, int tahun, int maxHari) {
         maxHari = 30;
     } else {
         maxHari = 31;
+    }
+    
+    if (bulan < 1 || bulan > 12) {
+        return "Nulis bulan yang bener napa!";
     }
 
     if (tanggal < 1 || tanggal > maxHari) {
@@ -85,7 +86,7 @@ string getKhodam(string zodiak) {
     if (zodiak == "Aries") return "Hilda (Tante tante gagah)";
     else if (zodiak == "Taurus") return "Minotaur (Banteng PDI) ";
     else if (zodiak == "Gemini") return "Selena & Karina (Si paling kembar)";
-    else if (zodiak == "Cancer") return "Zhask (Si paling banyak joni)";
+    else if (zodiak == "Cancer") return "Zhask (Si paling banyak anak)";
     else if (zodiak == "Leo") return "Badang (Salam dari binjai) ";
     else if (zodiak == "Virgo") return "Odette (Klo nanyi enak sihh)";
     else if (zodiak == "Libra") return " Lunox (Tante Cantik) ";
@@ -114,7 +115,7 @@ int main() {
     cout << "\nTanggal lahir kamu: " << tanggal << "-" << bulan << "-" << tahun << endl;
     cout << "Zodiak kamu adalah: " << zodiak << endl;
     cout << "Quotes buat kamu: " << getQuotes(zodiak) << endl;
-    cout << "Khodam hewan pendampingmu adalah: " << getKhodam(zodiak) << endl;
+    cout << "Khodam pendampingmu adalah: " << getKhodam(zodiak) << endl;
 
     return 0;
 }
