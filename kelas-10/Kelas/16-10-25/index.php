@@ -83,19 +83,22 @@
                     $pesan = $_POST['pesan'];
                     $email = $_POST['email'];
 
-                    echo $nama;
-                    echo "<br>";
-                    echo $email;
-                    echo "<br>";
-                    echo $pesan;
+                    echo "<div class='card bg-light py-5 mt-4 shadow-lg text-center'>";
+                        echo "<div class='card-body'>";
+                            echo "<h3>Data yang Anda kirim:</h3>";
+                            echo "<strong>Nama: </strong> $nama<br>";
+                            echo "<strong>Pesan: </strong> $pesan<br>";
+                            echo "<strong>Email: </strong> $email<br>";
+                        echo "</div>";
+                    echo "</div>";
 
                 }
             ?>
         </section>
 
-        <footer>
-            <p>
-                Web ini dibuat oleh Andaru
+        <footer class="bg-dark text-white text-center py-3 mt-5 rounded-top-4 shadow-lg">
+            <p class="mb-0">
+                Web ini dibuat oleh <strong>Andaru</strong> &copy; 2025 | SMKN 2 Buduran Sidoarjo
             </p>
         </footer>
     </div>
