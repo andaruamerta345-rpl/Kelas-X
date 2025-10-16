@@ -3,5 +3,7 @@
   "files.associations": {
     "iostream": "cpp",
     "ostream": "cpp"
-  }
+  },
+  "window.zoomLevel": 0.1,
+  "editor.fontSize": 15
 }
