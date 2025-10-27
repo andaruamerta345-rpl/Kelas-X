@@ -83,24 +83,41 @@
                     $pesan = $_POST['pesan'];
                     $email = $_POST['email'];
 
-                    echo "<div class='card bg-light py-5 mt-4 shadow-lg text-center'>";
-                        echo "<div class='card-body'>";
-                            echo "<h3>Data yang Anda kirim:</h3>";
-                            echo "<strong>Nama: </strong> $nama<br>";
-                            echo "<strong>Pesan: </strong> $pesan<br>";
-                            echo "<strong>Email: </strong> $email<br>";
+                        echo "<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>";
+                            echo "<div id='liveToast' class='toast show' role='alert' aria-live='assertive' aria-atomic='true'>";
+                                echo "<div class='toast-header bg-primary text-white'>";
+                                    echo "<strong class='me-auto'>Data Terkirim!</strong>";
+                                    echo "<small>Baru saja</small>";
+                                    echo "<button type='button' class='btn-close btn-close-white ms-2 mb-1' data-bs-dismiss='toast' aria-label='Close'></button>";
+                                    echo "</div>";
+                                    echo "<div class='toast-body'>";
+                                    echo "<strong>Nama:</strong> $nama<br>";
+                                    echo "<strong>Pesan:</strong> $pesan<br>";
+                                    echo "<strong>Email:</strong> $email<br>";
+                                echo "</div>";
+                            echo "</div>";
                         echo "</div>";
-                    echo "</div>";
 
                 }
             ?>
         </section>
 
+        
         <footer class="bg-dark text-white text-center py-3 mt-5 rounded-top-4 shadow-lg">
             <p class="mb-0">
                 Web ini dibuat oleh <strong>Andaru</strong> &copy; 2025 | SMKN 2 Buduran Sidoarjo
             </p>
         </footer>
     </div>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toastEl = document.getElementById('liveToast');
+            if (toastEl) {
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show(); 
+            }
+        });
+    </script>
 </body>
 </html>

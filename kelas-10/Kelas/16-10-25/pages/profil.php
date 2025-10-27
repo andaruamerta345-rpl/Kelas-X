@@ -14,7 +14,7 @@
 
     <p class="text-secondary">
       <strong>Visi kami</strong> adalah menjadi sekolah kejuruan terkemuka yang
-      menghasilkan lulusan berkualitas tinggi dan siap bersaing di pasar global.
+      menghasilkan lulusan berkualitas tinggi dan siap bersaing di pasar global dan menjadikan siswa yang Unggul, Mumpuni, Berkarakter.
     </p>
 
     <p class="text-secondary mb-3"><strong>Misi kami meliputi:</strong></p>
