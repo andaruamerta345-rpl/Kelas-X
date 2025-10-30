@@ -16,8 +16,8 @@
     }
 
     h2 {
-        color: #00ffcc;
-        text-shadow: 0 0 10px #00ffcc;
+        color: #005eff;
+        text-shadow: 0 0 10px #005eff;
         letter-spacing: 1px;
     }
 
@@ -34,13 +34,12 @@
         padding: 20px;
         border-radius: 12px;
         background: rgba(20, 20, 25, 0.8);
-        box-shadow: 0 0 15px #00ffcc33;
         border: 1px solid #00ffcc;
         transition: 0.3s;
     }
 
     fieldset:hover {
-        box-shadow: 0 0 20px #00ffcc66;
+        box-shadow: 0 0 20px #efefef;
         transform: translateY(-5px);
     }
 
@@ -119,12 +118,12 @@
 </head>
 
 <body>
-    <h2>🔮 Zodiak & Kalkulator 🔢</h2>
+    <h2> Zodiak & Kalkulator </h2>
 
     <div class="container">
-        <!-- FORM ZODIAK -->
+        <!-- form zodiak -->
         <fieldset>
-            <legend>Zodiak Anda</legend>
+            <legend>Zodiak</legend>
             <form method="POST">
                 <label for="tanggal">Tanggal :</label>
                 <input type="number" name="tanggal" id="tanggal" placeholder="Masukkan Tanggal" required>
@@ -136,7 +135,7 @@
             </form>
         </fieldset>
 
-        <!-- FORM KALKULATOR -->
+        <!-- form kalkulator -->
         <fieldset class="kalkulator">
             <legend>Kalkulator</legend>
             <form method="POST">
@@ -154,6 +153,20 @@
                 </div>
             </form>
         </fieldset>
+
+        <!-- form zodiak -->
+        <fieldset>
+            <legend>Zodiak (Return Version)</legend>
+            <form method="POST">
+                <label for="tanggal">Tanggal :</label>
+                <input type="number" name="tgl" id="tanggal" placeholder="Masukkan Tanggal" required>
+
+                <label for="bulan">Bulan :</label>
+                <input type="number" name="bln" id="bulan" placeholder="Masukkan Bulan" required>
+
+                <input style="margin-top:10px;" type="submit" value="Lihat Zodiak" name="submit">
+            </form>
+        </fieldset>
     </div>
 
     <hr>
@@ -162,6 +175,8 @@
     
 
     <?php 
+
+    // ====== ZODIAK ECHO VERSION ======
     if (isset($_POST['kirim'])) {
         $tanggal = $_POST['tanggal'];
         $bulan = $_POST['bulan'];
@@ -175,6 +190,16 @@
             echo "Mohon maaf tuan, mungkin Bulan atau tanggal anda salah";
         }
 
+    }
+
+    // ====== ZODIAK RETURN VERSION ======
+    if (isset($_POST['submit'])) {
+        $tanggal = $_POST['tgl'];
+        $bulan = $_POST['bln'];
+
+        echo "Tanggal " . $tanggal . " Bulan " . $bulan . "<br><br>";
+        $zodiak = zodiakReturn($tanggal, $bulan);
+        echo $zodiak;
     }
 
     function belajar() {
@@ -201,6 +226,9 @@
 
     // $tanggal = 31;
     // $bulan = 2;
+
+
+    // ========= ZODIAK ECHO VERSION ==========
 
     function zodiak($tanggal, $bulan) {
         if (($tanggal > 0 && $tanggal < 32) && ($bulan > 0 && $bulan < 13)) {
@@ -304,6 +332,121 @@
         }
     }
 
+
+
+    // ========= ZODIAK RETURN VERSION ==========
+
+    function zodiakReturn($tgl, $bln) {
+    $hasil = "";
+
+    if (($tgl > 0 && $tgl < 32) && ($bln > 0 && $bln < 13)) {
+        if ($bln == 1) {
+            if ($tgl > 0 && $tgl < 20) {
+                $hasil = "Zodiak anda Capricorn tuan :)";
+            } else {
+                $hasil = "Zodiak anda Aquarius tuan :)";
+            }
+        }
+
+        if ($bln == 2) {
+            if ($tgl > 0 && $tgl < 21) {
+                $hasil = "Zodiak anda Aquarius tuan :)";
+            } else {
+                $hasil = "Zodiak anda Pisces tuan :)";
+            }
+        }
+
+        if ($bln == 3) {
+            if ($tgl > 0 && $tgl < 22) {
+                $hasil = "Zodiak anda Pisces tuan :)";
+            } else {
+                $hasil = "Zodiak anda Aries tuan :)";
+            }
+        }
+
+        if ($bln == 4) {
+            if ($tgl > 0 && $tgl < 21) {
+                $hasil = "Zodiak anda Aries tuan :)";
+            } else {
+                $hasil = "Zodiak anda Taurus tuan :)";
+            }
+        }
+
+        if ($bln == 5) {
+            if ($tgl > 0 && $tgl < 22) {
+                $hasil = "Zodiak anda Taurus tuan :)";
+            } else {
+                $hasil = "Zodiak anda Gemini tuan :)";
+            }
+        }
+
+        if ($bln == 6) {
+            if ($tgl > 0 && $tgl < 21) {
+                $hasil = "Zodiak anda Gemini tuan :)";
+            } else {
+                $hasil = "Zodiak anda Cancer tuan :)";
+            }
+        }
+
+        if ($bln == 7) {
+            if ($tgl > 0 && $tgl < 23) {
+                $hasil = "Zodiak anda Cancer tuan :)";
+            } else {
+                $hasil = "Zodiak anda Leo tuan :)";
+            }
+        }
+
+        if ($bln == 8) {
+            if ($tgl > 0 && $tgl < 23) {
+                $hasil = "Zodiak anda Leo tuan :)";
+            } else {
+                $hasil = "Zodiak anda Virgo tuan :)";
+            }
+        }
+
+        if ($bln == 9) {
+            if ($tgl > 0 && $tgl < 23) {
+                $hasil = "Zodiak anda Virgo tuan :)";
+            } else {
+                $hasil = "Zodiak anda Libra tuan :)";
+            }
+        }
+
+        if ($bln == 10) {
+            if ($tgl > 0 && $tgl < 24) {
+                $hasil = "Zodiak anda Libra tuan :)";
+            } else {
+                $hasil = "Zodiak anda Scorpio tuan :)";
+            }
+        }
+
+        if ($bln == 11) {
+            if ($tgl > 0 && $tgl < 22) {
+                $hasil = "Zodiak anda Scorpio tuan :)";
+            } else {
+                $hasil = "Zodiak anda Sagitarius tuan :)";
+            }
+        }
+
+        if ($bln == 12) {
+            if ($tgl > 0 && $tgl < 23) {
+                $hasil = "Zodiak anda Sagitarius tuan :)";
+            } else {
+                $hasil = "Zodiak anda Capricorn tuan :)";
+            }
+        }
+
+         return $hasil;
+    } else {
+        $hasil = "Tanggal atau bulan yang anda masukkan salah tuan :(";
+    }
+
+}
+
+
+
+
+
     // Pemanggilan function
     // zodiak(19,2);
     // echo "<br>";
@@ -324,6 +467,11 @@
     // Pemanggilan function
     // cekBulan(0);
 
+    // if (cekBulan(0) && cekTanggal(0))   {
+    //     echo"bulan atau tanggal benar ";
+    // }else {
+    //     echo"bulan atau tanggal salah ";
+    // }
    
 
     // echo "<hr>";
