@@ -154,7 +154,7 @@
             </form>
         </fieldset>
 
-        <!-- form zodiak -->
+        <!-- form zodiak (return version) -->
         <fieldset>
             <legend>Zodiak (Return Version)</legend>
             <form method="POST">
@@ -177,30 +177,32 @@
     <?php 
 
     // ====== ZODIAK ECHO VERSION ======
-    if (isset($_POST['kirim'])) {
-        $tanggal = $_POST['tanggal'];
-        $bulan = $_POST['bulan'];
+if (isset($_POST['kirim'])) {
+    $tanggal = $_POST['tanggal'];
+    $bulan = $_POST['bulan'];
 
-        echo "Tanggal " . $tanggal . " Bulan " . $bulan . "<br><br>";
-        zodiak($tanggal, $bulan);
-
-         if (cekBulan(1) && cekTanggal(1)) {
+    if (cekBulan($bulan) && cekTanggal($tanggal)) {
+        echo "Tanggal $tanggal Bulan $bulan<br><br>";
+        zodiak($tanggal, $bulan);  
         echo "<br>Bulan dan tanggal anda benar";
-        } else {
-            echo "Mohon maaf tuan, mungkin Bulan atau tanggal anda salah";
-        }
-
+    } else {
+        echo "<br>Tanggal atau bulan yang anda masukkan salah tuan :(";
     }
+}
 
-    // ====== ZODIAK RETURN VERSION ======
-    if (isset($_POST['submit'])) {
-        $tanggal = $_POST['tgl'];
-        $bulan = $_POST['bln'];
+// ====== ZODIAK RETURN VERSION ======
+if (isset($_POST['submit'])) {
+    $tanggal = $_POST['tgl'];
+    $bulan = $_POST['bln'];
 
-        echo "Tanggal " . $tanggal . " Bulan " . $bulan . "<br><br>";
-        $zodiak = zodiakReturn($tanggal, $bulan);
-        echo $zodiak;
+    if (cekBulan($bulan) && cekTanggal($tanggal)) {
+        echo "Tanggal $tanggal Bulan $bulan<br><br>";
+        echo zodiakReturn($tanggal, $bulan); 
+        echo "<br>Bulan dan tanggal anda benar";
+    } else {
+        echo "<br>Tanggal atau bulan yang anda masukkan salah tuan :(";
     }
+}
 
     function belajar() {
         echo "Hari ini, saya belajar function";
