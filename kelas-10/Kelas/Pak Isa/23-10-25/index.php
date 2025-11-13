@@ -54,9 +54,15 @@
                     if ($isi == "user"){
                         require_once "user.php";
                     }
-                }
+                }                 
             ?>
         </div>
     </div>
+    <?php 
+        echo "<pre>";
+            print_r($_SESSION);
+        echo "</pre>";
+
+    ?>
 </body>
 </html>
