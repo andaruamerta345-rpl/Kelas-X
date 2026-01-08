@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myFacebook</title>
+    <style>
+      #bigBox {
+        display: flex;
+        justify-content: center;
+      }
+
+      .left {
+        padding: 20px;
+        width: 40%;
+        text-align: center;
+      }
+
+      .right {
+        padding: 20px;
+        width: 40%;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+      }
+
+      input[type="submit"] {
+        background-color: #1877f2;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button {
+        background-color: #42b72a;
+        color: white;
+        padding: 10px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .btn {
+        color: #1877f2;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="bigBox">
+      <div class="left">
+        <img src="assets/facebook.svg" alt="logo facebook" width="90%" />
+        <h2>welcome to facebook</h2>
+        <p style="font-size: 30px">
+          connect with friends and the world around you on facebook.
+        </p>
+      </div>
+
+      <div class="right">
+        <fieldset
+          style="padding: 20px; border: 1px solid #221be5; border-radius: 10px"
+        >
+          <legend><h1>Login Page</h1></legend>
+          <form action="">
+            <label for="nama">Username: </label> <br />
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="enter your  Username"
+            />
+            <br />
+            <br />
+
+            <label for="pass">Password: </label> <br />
+            <input
+              type="password"
+              id="pass"
+              name="pass"
+              placeholder="enter your password"
+            />
+            <br />
+            <br />
+            <br />
+
+            <input type="submit" value="Login" /> <br />
+            <br />
+            <a href="" class="btn">forgoten password??</a>
+
+            <hr />
+            <button>Create New Account</button>
+          </form>
+        </fieldset>
+      </div>
+    </section>
+
+    <footer>
+      <p>made by : 7arzz</p>
+      <p>Copyright &copy; 2023 myFacebook</p>
+    </footer>
+  </body>
+</html>
