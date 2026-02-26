@@ -1,0 +1,58 @@
+### Apa itu Laravel?
+
+**Laravel** itu framework **PHP** yang populer buat bikin web. Intinya, dia bikin hidup kita lebih gampang kalau mau bikin website yang kompleks karena udah nyediain banyak fitur siap pakai. Contohnya: routing (atur URL), database (Eloquent ORM), autentikasi (login/logout), dan templating (Blade).
+
+Jadi, kalau PHP murni itu kayak bikin mobil dari nol, Laravel itu kayak beli mobil yang udah ada rangkanya, tinggal kita pasang jok, cat, dan upgrade dikit. 🚗💨
+
+---
+
+### Cara Kerjanya Secara Sederhana
+
+Laravel bekerja pakai pola **MVC (Model-View-Controller)**. Ini gampangnya:
+
+1. **Model** → Bagian yang urus data/database. Misal: user, produk, transaksi.
+2. **View** → Bagian yang ngatur tampilan di browser. Misal: halaman login, halaman dashboard.
+3. **Controller** → Bagian yang jadi “jembatan” antara Model dan View. Dia terima request dari user, proses data, terus kirim ke View.
+
+**Alur kerja singkat:**
+
+1. User buka URL (misal `/profile`) → Request dikirim ke **Controller**.
+2. Controller ambil data dari **Model** → misal data user dari database.
+3. Controller kirim data ke **View** → tampil di browser user.
+
+Selain itu, Laravel juga pakai **routing**, jadi tiap URL bisa ditentukan apa yang harus dijalanin. Misal: `/home` otomatis ke `HomeController@index`.
+
+---
+
+### Contoh Sederhana
+
+Misal kita mau tampilkan semua user:
+
+**Route** (`web.php`):
+
+```php
+Route::get('/users', [UserController::class, 'index']);
+```
+
+**Controller** (`UserController.php`):
+
+```php
+public function index() {
+    $users = User::all(); // ambil semua data user
+    return view('users.index', compact('users')); // kirim ke view
+}
+```
+
+**View** (`users/index.blade.php`):
+
+```html
+<h1>Daftar User</h1>
+<ul>
+@foreach($users as $user)
+    <li>{{ $user->name }}</li>
+@endforeach
+</ul>
+```
+
+Hasilnya: user buka `/users`, langsung lihat daftar semua user di browser. Simple kan?
+
