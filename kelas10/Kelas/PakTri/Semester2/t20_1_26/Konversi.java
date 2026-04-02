@@ -1,7 +1,7 @@
-public class konversi {
+public class Konversi {
     public static void main(String[] args) {
         String a = "123";
-        String b = Integer.valueOf(a);
+        String b = String.valueOf(Integer.parseInt(a));
 
         System.out.println("a: " + a);
         System.out.println("b: " + b);

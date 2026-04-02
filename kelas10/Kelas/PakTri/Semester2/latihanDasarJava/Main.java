@@ -209,8 +209,8 @@ public class Main {
         // Perulangan foreach
         System.out.println("Perulangan foreach:");
         String[] buah = { "Apel", "Pisang", "Mangga" };
-        for (String b : buah) {
-            System.out.println("Buah: " + b);
+        for (String item : buah) {
+            System.out.println("Buah: " + item);
         }
 
 
