@@ -1,0 +1,37 @@
+Method adalah blok kode yang berisi serangkaian instruksi untuk melakukan tugas tertentu. Method dapat menerima parameter dan mengembalikan nilai.
+
+Constructor adalah method khusus yang akan dieksekusi secara otomatis ketika sebuah objek dibuat dari sebuah class.
+
+Overloading adalah kemampuan untuk mendefinisikan beberapa method dengan nama yang sama dalam satu class, asalkan memiliki parameter yang berbeda (jumlah atau tipe data).
+
+
+## Formula pembuatan objek :
+NamaClass namaObjek = new NamaClass();
+
+## Cara memanggil objek :
+namaObjek.namaMethod();
+namaObjek.namaMethod(parameter1, parameter2);
+
+
+## Contoh : 
+Siswa obj = new Siswa();
+
+Siswa obj1 = new Siswa();
+Siswa obj2 = new Siswa();
+Siswa obj3 = new Siswa();
+
+obj1.nama = "Budi";
+obj2.nama = "Ani";
+obj3.nama = "Citra";
+
+obj1.kelas = "10A";
+obj2.kelas = "10B";
+obj3.kelas = "10C";
+
+obj1.jurusan = "X RPL";
+obj2.jurusan = "XI RPL";
+obj3.jurusan = "XII RPL";
+
+obj1.umur = 15;
+obj2.umur = 16;
+obj3.umur = 17;
