@@ -1,0 +1,10 @@
+1. Package :
+- Package adalah sekumpulan class yang diorganisir dalam sebuah folder
+- Package digunakan untuk mengelompokkan class yang memiliki fungsi yang sama
+- Package digunakan untuk mencegah konflik nama class
+
+2. Akses Modifier :
++ public : bisa diakses dari mana saja
+- private : hanya bisa diakses dari dalam class itu sendiri
+# protected : bisa diakses dari class yang sama dan subclass
+~ default : bisa diakses dari class yang sama dan subclass yang berada dalam satu package
