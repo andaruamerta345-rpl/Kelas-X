@@ -1,0 +1,57 @@
+======================================================
+DETAIL LANGKAH PEMBUATAN: AndaruFrontend & AndaruBackend
+======================================================
+
+--- BAGIAN 1: BACKEND (LARAVEL 12) ---
+
+1. Inisialisasi & Konfigurasi Dasar
+   - Instalasi Laravel 12.
+   - Konfigurasi Database di file `.env` (menggunakan MySQL/SQLite).
+   - Mengaktifkan Laravel Sanctum untuk sistem Token API.
+
+2. Pembuatan Database Migration
+   - Tabel `profiles`: Menyimpan data diri (nama, bio, foto).
+   - Tabel `portfolios`: Menyimpan daftar proyek (judul, deskripsi, gambar, link).
+   - Tabel `skills`: Menyimpan daftar keahlian (nama skill, persentase/level).
+   - Tabel `users`: Tabel default Laravel untuk autentikasi.
+
+3. Pembuatan Model & Definisi Atribut
+   - Model `Profile`, `Portfolio`, `Skill`: Menentukan `$fillable` agar data bisa disimpan secara massal.
+   - Relasi: Menghubungkan tabel-tabel tersebut dengan tabel `User`.
+
+4. Pembuatan API Controller (Logika Bisnis)
+   - `AuthController`: Menangani Login, Register, dan Logout.
+   - `ProfileController`: Menangani CRUD (Create, Read, Update, Delete) data profil.
+   - `PortfolioController`: Menangani pengelolaan data portofolio.
+   - `SkillController`: Menangani pengelolaan data keahlian.
+
+5. Routing API
+   - Mendefinisikan endpoint di `routes/api.php` (contoh: `/api/login`, `/api/portfolios`).
+   - Menerapkan Middleware `auth:sanctum` untuk melindungi data agar hanya bisa diakses setelah login.
+
+--- BAGIAN 2: FRONTEND (REACT + VITE) ---
+
+1. Inisialisasi & Setup Lingkungan
+   - Membuat project dengan Vite (Template React).
+   - Instalasi library pendukung: `axios` (API), `tailwindcss` (Styling), `framer-motion` (Animasi), `react-router-dom` (Navigasi).
+
+2. Service API (Koneksi Backend)
+   - Membuat file `src/services/api.js` untuk konfigurasi base URL Axios dan interceptor token.
+
+3. State Management & Context
+   - Membuat `AuthContext` untuk memantau apakah user sedang login atau tidak secara global.
+
+4. Pembuatan Halaman Utama (Pages)
+   - `Home.jsx`: Tampilan landing page untuk pengunjung.
+   - `Login.jsx` & `Register.jsx`: Form untuk masuk dan mendaftar akun.
+   - `Dashboard.jsx`: Halaman utama admin setelah login.
+   - `Portfolios.jsx` & `Skills.jsx`: Halaman untuk mengelola (tambah/edit/hapus) data.
+
+5. Integrasi Frontend-Backend
+   - Mengambil data (Fetching) dari API Laravel menggunakan `useEffect`.
+   - Mengirim data form ke API menggunakan fungsi `axios.post` atau `axios.put`.
+   - Menampilkan notifikasi sukses/error menggunakan library seperti `react-hot-toast`.
+
+6. Styling & Finishing
+   - Penerapan desain responsif dengan Tailwind CSS.
+   - Menambahkan animasi transisi halaman menggunakan Framer Motion.
